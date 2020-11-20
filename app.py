@@ -1,8 +1,8 @@
 from flask import Flask, request, jsonify
+import requests
+import warnings
 app = Flask(__name__)
 def point_to_adress(lon, lat):
-    import requests
-    import warnings
     url = "https://nominatim.openstreetmap.org/reverse?format=jsonv2&lon=" + str(lon) + "&lat=" + str(lat)
     with warnings.catch_warnings():
         warnings.simplefilter("ignore")
