@@ -13,7 +13,7 @@ def point_to_adress(lon, lat):
 def respond():
     # Retrieve the name from url parameter
     lat = request.args.get("lat", None)
-    long = requests.args.get("long",None)
+    long = request.args.get("long",None)
     response = {}
     if lat and long:
     	response["city"] = point_to_adress(long, lat)
