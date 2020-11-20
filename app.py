@@ -6,7 +6,7 @@ def point_to_adress(lon, lat):
     url = "https://nominatim.openstreetmap.org/reverse?format=jsonv2&lon=" + str(lon) + "&lat=" + str(lat)
     with warnings.catch_warnings():
         warnings.simplefilter("ignore")
-        r = requests.get(url=url).json()['address']['city']
+        r = requests.get(url=url).json()['address']
         return r
 
 @app.route('/get/', methods=['GET'])
